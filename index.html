@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f2">
+  <meta name="description" content="シゴデキ シール帳アプリのプライバシーポリシー。端末内データ、画像、通知、ストア購入、バックアップの取り扱いを説明します。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://shooos.github.io/shigodeki-sticker-book-privacy-policy/">
+  <title>プライバシーポリシー | シゴデキ シール帳</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #263735;
+      --muted: #61716d;
+      --line: #dce5df;
+      --paper: #ffffff;
+      --canvas: #f5f7f2;
+      --green: #326b59;
+      --green-dark: #234c41;
+      --mint: #eaf3ed;
+      --gold: #b28b47;
+      --soft-gold: #f5efdf;
+      --shadow: 0 18px 54px rgba(36, 66, 55, .08);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 8% 4%, rgba(204, 226, 210, .45), transparent 32rem),
+        radial-gradient(ellipse at 96% 20%, rgba(244, 231, 201, .35), transparent 28rem),
+        var(--canvas);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      text-size-adjust: 100%;
+    }
+    a { color: var(--green-dark); text-decoration-thickness: .08em; text-underline-offset: .2em; }
+    a:hover { color: #1d3f35; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #92b7a5; outline-offset: 3px; }
+    .skip-link {
+      position: absolute; left: 1rem; top: -5rem; z-index: 10;
+      padding: .6rem .9rem; border-radius: .5rem; background: var(--green-dark); color: white;
+    }
+    .skip-link:focus { top: 1rem; }
+    .shell { width: min(100% - 2rem, 920px); margin: 0 auto; padding: 1.4rem 0 4rem; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+    .brand { display: inline-flex; align-items: center; gap: .7rem; color: var(--ink); text-decoration: none; font-weight: 750; letter-spacing: -.02em; }
+    .brand-mark {
+      display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: .85rem;
+      background: var(--green); color: #fff; font-weight: 800; box-shadow: 0 5px 12px rgba(50, 107, 89, .2);
+    }
+    .brand small { display: block; color: var(--muted); font-size: .62rem; font-weight: 700; letter-spacing: .13em; line-height: 1.2; }
+    .language { display: inline-flex; gap: .2rem; padding: .25rem; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.8); }
+    .language button {
+      border: 0; border-radius: 999px; padding: .42rem .78rem; background: transparent; color: var(--muted);
+      font: inherit; font-size: .84rem; font-weight: 700; cursor: pointer;
+    }
+    .language button[aria-pressed="true"] { background: var(--green-dark); color: white; }
+    .hero {
+      position: relative; overflow: hidden; padding: clamp(1.5rem, 5vw, 3.2rem);
+      border: 1px solid rgba(214, 226, 217, .9); border-radius: 1.5rem;
+      background: linear-gradient(120deg, rgba(255,255,255,.97), rgba(243,248,243,.94));
+      box-shadow: var(--shadow);
+    }
+    .hero::after {
+      content: ""; position: absolute; width: 12rem; height: 12rem; right: -3rem; top: -4rem;
+      border: 1px solid rgba(178,139,71,.22); border-radius: 50%;
+      box-shadow: 0 0 0 1.1rem rgba(178,139,71,.045), 0 0 0 2.2rem rgba(178,139,71,.035);
+      pointer-events: none;
+    }
+    .eyebrow { margin: 0 0 .4rem; color: var(--green); font-size: .75rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { position: relative; z-index: 1; margin: 0; max-width: 15ch; font-size: clamp(2rem, 6vw, 3.15rem); line-height: 1.2; letter-spacing: -.045em; }
+    .hero-copy { position: relative; z-index: 1; max-width: 62ch; margin: 1rem 0 0; color: #4e615b; font-size: 1.02rem; }
+    .metadata { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; margin-top: 1.5rem; color: var(--muted); font-size: .84rem; }
+    .metadata span { display: inline-flex; align-items: center; gap: .45rem; }
+    .metadata span::before { content: ""; width: .36rem; height: .36rem; border-radius: 50%; background: var(--gold); }
+    .summary {
+      display: grid; grid-template-columns: auto 1fr; gap: .9rem; align-items: start;
+      margin: 1rem 0 1.25rem; padding: 1.1rem 1.25rem; border: 1px solid #d6e7dc; border-radius: 1rem; background: var(--mint);
+    }
+    .summary-icon { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; color: var(--green-dark); background: white; font-weight: 800; }
+    .summary p { margin: 0; }
+    .summary strong { color: var(--green-dark); }
+    .contents { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.2rem 0; }
+    .contents a {
+      padding: .45rem .75rem; border: 1px solid var(--line); border-radius: 999px;
+      background: rgba(255,255,255,.78); color: #43564f; font-size: .83rem; text-decoration: none;
+    }
+    .contents a:hover { background: white; border-color: #b6cdbf; }
+    .policy { display: grid; gap: .9rem; }
+    .section {
+      padding: clamp(1.15rem, 3vw, 1.65rem); border: 1px solid var(--line); border-radius: 1rem;
+      background: var(--paper); box-shadow: 0 5px 18px rgba(36,66,55,.035);
+      scroll-margin-top: 1rem;
+    }
+    h2 { display: flex; align-items: baseline; gap: .6rem; margin: 0 0 .65rem; font-size: 1.17rem; line-height: 1.45; letter-spacing: -.02em; }
+    h2 .number { color: var(--gold); font-size: .78rem; font-weight: 800; letter-spacing: .06em; }
+    h3 { margin: 1.1rem 0 .35rem; color: var(--green-dark); font-size: .98rem; }
+    p { margin: .55rem 0; }
+    ul { margin: .5rem 0 .2rem; padding-left: 1.35rem; }
+    li { padding-left: .18rem; margin: .28rem 0; }
+    li::marker { color: #759783; }
+    .note { margin-top: .8rem; color: var(--muted); font-size: .9rem; }
+    .external { overflow-wrap: anywhere; }
+    .footer { margin-top: 1.5rem; padding: 1.2rem .2rem; color: var(--muted); font-size: .82rem; }
+    .footer p { margin: .25rem 0; }
+    [hidden] { display: none !important; }
+    @media (max-width: 560px) {
+      .shell { width: min(100% - 1.1rem, 920px); padding-top: .9rem; }
+      .topbar { margin-bottom: .8rem; }
+      .brand-mark { width: 2.25rem; height: 2.25rem; }
+      .hero { border-radius: 1.1rem; }
+      .metadata { display: grid; gap: .35rem; }
+      .contents { gap: .4rem; }
+      .contents a { font-size: .78rem; padding: .38rem .58rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+    @media print {
+      body { background: #fff; color: #111; font-size: 11pt; }
+      .shell { width: 100%; padding: 0; }
+      .language, .contents, .skip-link { display: none !important; }
+      .hero, .section { box-shadow: none; break-inside: avoid; }
+      a { color: #111; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#policy">本文へ移動</a>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="シゴデキ シール帳">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span id="brand-ja">シゴデキ<small>シール帳</small></span>
+        <span id="brand-en" hidden>ProKiddo<small>STICKER BOOK</small></span>
+      </a>
+      <div class="language" role="group" aria-label="Language">
+        <button type="button" data-language="ja" aria-pressed="true">日本語</button>
+        <button type="button" data-language="en" aria-pressed="false">English</button>
+      </div>
+    </header>
+
+    <section class="hero" id="top">
+      <p id="ja-eyebrow" class="eyebrow">シゴデキ シール帳 · プライバシー</p>
+      <p id="en-eyebrow" class="eyebrow" hidden>Privacy · ProKiddo Sticker Book</p>
+      <div id="ja-heading">
+        <h1>プライバシーポリシー</h1>
+        <p class="hero-copy">シゴデキ シール帳で取り扱う情報と、その保存・利用方法を説明します。</p>
+      </div>
+      <div id="en-heading" hidden>
+        <h1>Privacy Policy</h1>
+        <p class="hero-copy">This policy explains how ProKiddo Sticker Book handles information.</p>
+      </div>
+      <div class="metadata">
+        <span id="ja-date">最終更新日：2026年10月29日</span>
+        <span id="en-date" hidden>Last updated: October 29, 2026</span>
+        <span id="ja-app">対象：シゴデキ シール帳アプリ</span>
+        <span id="en-app" hidden>Applies to: ProKiddo Sticker Book</span>
+      </div>
+    </section>
+
+    <div id="ja-policy">
+      <div class="summary">
+        <span class="summary-icon" aria-hidden="true">✓</span>
+        <p><strong>基本方針：</strong>メンバー情報や画像などは端末内に保存され、アプリ開発者のサーバーには送信されません。広告・利用状況の分析も行いません。ストア購入と、利用者が選んだバックアップ保存先は別途説明します。</p>
+      </div>
+      <nav class="contents" aria-label="目次">
+        <a href="#ja-data">取り扱う情報</a><a href="#ja-device">端末機能</a><a href="#ja-store">ストア購入</a>
+        <a href="#ja-backup">バックアップ</a><a href="#ja-children">子どもの情報</a><a href="#ja-delete">保存期間と削除</a><a href="#ja-contact">お問い合わせ</a>
+      </nav>
+      <main class="policy" id="policy">
+        <section class="section" id="ja-data">
+          <h2><span class="number">01</span> アプリで取り扱う情報</h2>
+          <p>本アプリは、アカウント登録やアプリ開発者が運営するオンラインサービスを必要としません。管理者がアプリに入力した次の情報は、利用中の端末内に保存されます。</p>
+          <ul>
+            <li>メンバーの名前と、選択したプロフィール画像</li>
+            <li>やることリスト、項目、割り当て、達成状況および獲得したシールの記録</li>
+            <li>カスタムシールグループの名前と、選択したシール画像</li>
+            <li>言語や通知時刻などのアプリ設定</li>
+            <li>管理画面の認証情報と、ストアで確認したPlus利用権の端末内キャッシュ</li>
+          </ul>
+          <p>アプリ内のデータは端末内に暗号化して保存します。管理用PINそのものを開発者へ送信したり、平文のまま保存したりしません。</p>
+          <p>本アプリは、開発者のサーバーへこれらの情報を送信しません。アプリ内に広告、広告SDK、利用状況分析SDKを含めていません（2026年10月29日時点）。</p>
+        </section>
+
+        <section class="section" id="ja-device">
+          <h2><span class="number">02</span> 写真・カメラ・通知・生体認証</h2>
+          <ul>
+            <li><strong>写真とカメラ：</strong>管理者がプロフィール画像またはカスタムシール画像を選ぶ・撮影するときに使います。選んだ画像は端末内で処理・保存され、開発者のサーバーへ送信されません。</li>
+            <li><strong>通知：</strong>通知時刻を設定した場合、OSのローカル通知機能で端末上に通知を予約します。開発者のプッシュ通知サーバーは使いません。</li>
+            <li><strong>生体認証：</strong>管理画面の保護に使う場合があります。認証処理はOSが行い、アプリは認証結果だけを受け取ります。指紋・顔などの生体情報をアプリが取得・保存することはありません。</li>
+          </ul>
+          <p class="note">各機能は利用者が操作した場合に限って使われます。OSの設定から権限を変更できます。</p>
+        </section>
+
+        <section class="section" id="ja-store">
+          <h2><span class="number">03</span> ストア購入と利用権</h2>
+          <p>Plusの購入または復元には、AndroidではGoogle Play Billing、iOSではAppleのStoreKitを使います。購入手続きは各ストアのアカウントを通じて処理され、アプリは購入状態を受け取って機能を有効にします。</p>
+          <p>決済情報やストアのパスワードをアプリ開発者が取得することはありません。ストア側で処理される情報については、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Googleのプライバシーポリシー</a>または<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Appleのプライバシーポリシー</a>をご確認ください。</p>
+          <p>ストアで確認できた利用権は端末内に保存し、オフライン時の利用に使います。このキャッシュはアプリのポータブルバックアップには含めません。別の端末で復元する場合は、購入時と同じプラットフォームのストアアカウントで確認します。iOSとAndroidの購入権は共有しません。</p>
+        </section>
+
+        <section class="section" id="ja-backup">
+          <h2><span class="number">04</span> バックアップと外部サービス</h2>
+          <p>利用者がアプリからバックアップを書き出すと、データと画像を含むファイルを選択した保存先へ渡します。バックアップファイルは作成時に設定したPINで暗号化されます。開発者はファイルを受け取らず、保管しません。</p>
+          <p>保存先にGoogle Drive、iCloud Driveなどのクラウドサービスを利用する場合、そのサービスの運営者は選択されたファイルを取り扱います。各サービスの規約とプライバシーポリシーをご確認ください。アプリから書き出したファイルは、アプリ内データとは別に利用者が管理・削除してください。</p>
+          <p>アプリ開発者はユーザーアカウント、アプリ独自のクラウド同期、広告配信、行動追跡を提供していません。</p>
+        </section>
+
+        <section class="section" id="ja-children">
+          <h2><span class="number">05</span> 子どもの情報</h2>
+          <p>本アプリには子どもが使うメンバー画面があります。メンバー情報は保護者などの管理者が端末内に入力します。子ども向けのアカウント登録、広告、行動追跡、開発者サーバーへのプロフィール送信はありません。</p>
+          <p>管理者は、アプリで使うために必要な範囲で名前や画像を入力してください。開発者へのお問い合わせに、子どもの名前・画像などの情報を含めないようご配慮ください。</p>
+        </section>
+
+        <section class="section" id="ja-delete">
+          <h2><span class="number">06</span> 保存期間と削除</h2>
+          <p>アプリ内データは端末内に保存され、開発者側に保管期限やサーバー上のコピーはありません。データはアプリ内で削除できます。端末のOSバックアップや、利用者が書き出したバックアップファイルの保存・削除は、それぞれの端末設定・保存先に従います。</p>
+          <p>お問い合わせをいただいた場合は、返信と対応に必要な範囲で送信元のメールアドレスと本文を取り扱います。対応が終わった後は、法令上または紛争対応上の保存が必要な場合を除き、不要になった問い合わせ情報を削除します。</p>
+        </section>
+
+        <section class="section" id="ja-contact">
+          <h2><span class="number">07</span> お問い合わせ</h2>
+          <p>本ポリシーやアプリのプライバシーに関するお問い合わせは、次のメールアドレスへご連絡ください。</p>
+          <p><a href="mailto:unnndefined@gmail.com">unnndefined@gmail.com</a></p>
+        </section>
+
+      </main>
+    </div>
+
+    <div id="en-policy" lang="en" hidden>
+      <div class="summary">
+        <span class="summary-icon" aria-hidden="true">✓</span>
+        <p><strong>In brief:</strong> Member information, images, and other app content are stored on the device and are not sent to the app developer’s servers. The app does not use ads or usage analytics. Store purchases and user-selected backup destinations are described separately below.</p>
+      </div>
+      <nav class="contents" aria-label="Table of contents">
+        <a href="#en-data">Information handled</a><a href="#en-device">Device features</a><a href="#en-store">Store purchases</a>
+        <a href="#en-backup">Backups</a><a href="#en-children">Children’s information</a><a href="#en-delete">Retention and deletion</a><a href="#en-contact">Contact</a>
+      </nav>
+      <main class="policy">
+        <section class="section" id="en-data">
+          <h2><span class="number">01</span> Information handled by the app</h2>
+          <p>The app does not require an account or an online service operated by the app developer. The following information entered by an administrator is stored on the device:</p>
+          <ul>
+            <li>Member names and selected profile images</li>
+            <li>Task lists, items, assignments, completion status, and earned sticker records</li>
+            <li>Custom sticker group names and selected sticker images</li>
+            <li>App settings, such as language and reminder time</li>
+            <li>Administrator authentication information and a device-local cache of a Plus entitlement confirmed by a store</li>
+          </ul>
+          <p>App data is encrypted in the app’s local storage. The administrator’s PIN is not sent to the developer or stored in plain text.</p>
+          <p>The app does not send this information to the developer’s servers. As of October 29, 2026, the app includes no advertising, advertising SDKs, or usage analytics SDKs.</p>
+        </section>
+
+        <section class="section" id="en-device">
+          <h2><span class="number">02</span> Photos, camera, notifications, and biometrics</h2>
+          <ul>
+            <li><strong>Photos and camera:</strong> Used when an administrator chooses or takes a profile image or custom sticker image. Selected images are processed and stored on the device and are not sent to the developer’s servers.</li>
+            <li><strong>Notifications:</strong> If a reminder time is set, the operating system schedules a local notification on the device. The app does not use a developer-operated push notification server.</li>
+            <li><strong>Biometric authentication:</strong> May be used to protect administrator features. Authentication is performed by the operating system; the app receives only the result. The app does not access or store fingerprint or face data.</li>
+          </ul>
+          <p class="note">These features are used only when the user chooses to use them. Permissions can be changed in the operating system settings.</p>
+        </section>
+
+        <section class="section" id="en-store">
+          <h2><span class="number">03</span> Store purchases and entitlements</h2>
+          <p>Plus purchases and restores use Google Play Billing on Android and Apple StoreKit on iOS. Transactions are processed through the relevant store account, and the app receives the purchase status to enable Plus features.</p>
+          <p>The app developer does not receive payment details or store passwords. For information processed by the stores, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s Privacy Policy</a> or <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple’s Privacy Policy</a>.</p>
+          <p>A store-confirmed entitlement is saved on the device for offline use. This cache is not included in the app’s portable backup. To restore on another device, the same platform store account used for the purchase is checked. iOS and Android entitlements are not shared.</p>
+        </section>
+
+        <section class="section" id="en-backup">
+          <h2><span class="number">04</span> Backups and external services</h2>
+          <p>When a user exports a backup, the app provides a file containing app data and images to a destination selected by the user. The backup file is encrypted with the PIN set when it is created. The developer does not receive or store the file.</p>
+          <p>If a cloud service such as Google Drive or iCloud Drive is selected as the destination, that service’s operator handles the file. Please review that service’s terms and privacy policy. Exported files are managed and deleted separately from data inside the app.</p>
+          <p>The app developer does not provide user accounts, app-operated cloud sync, advertising, or behavioral tracking.</p>
+        </section>
+
+        <section class="section" id="en-children">
+          <h2><span class="number">05</span> Children’s information</h2>
+          <p>The app includes member screens used by children. A parent or other administrator enters member information on the device. The app does not provide child account registration, advertising, behavioral tracking, or transmission of member profiles to the developer’s servers.</p>
+          <p>Administrators should enter only information needed to use the app. Please do not include children’s names, images, or similar information in messages to the developer.</p>
+        </section>
+
+        <section class="section" id="en-delete">
+          <h2><span class="number">06</span> Retention and deletion</h2>
+          <p>App data is stored on the device. The developer does not keep a server-side copy or apply a server retention period. Data can be deleted within the app. Operating-system backups and exported backup files are managed according to the device settings and the selected storage provider.</p>
+          <p>If you contact the developer, the sender’s email address and message are handled as needed to reply and provide support. Once the request is resolved, information that is no longer needed is deleted unless retention is required by law or to handle a dispute.</p>
+        </section>
+
+        <section class="section" id="en-contact">
+          <h2><span class="number">07</span> Contact</h2>
+          <p>For questions about this policy or privacy in the app, contact:</p>
+          <p><a href="mailto:unnndefined@gmail.com">unnndefined@gmail.com</a></p>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p id="ja-foot">シゴデキ シール帳 · プライバシーポリシー · 2026年10月29日</p>
+      <p id="en-foot" hidden>ProKiddo Sticker Book · Privacy Policy · October 29, 2026</p>
+    </footer>
+  </div>
+  <script>
+    const languageButtons = [...document.querySelectorAll("[data-language]")];
+    const jaNodes = ["brand-ja", "ja-eyebrow", "ja-heading", "ja-date", "ja-app", "ja-policy", "ja-foot"];
+    const enNodes = ["brand-en", "en-eyebrow", "en-heading", "en-date", "en-app", "en-policy", "en-foot"];
+    function setLanguage(language) {
+      const showJapanese = language === "ja";
+      for (const id of jaNodes) document.getElementById(id).hidden = !showJapanese;
+      for (const id of enNodes) document.getElementById(id).hidden = showJapanese;
+      document.documentElement.lang = language;
+      for (const button of languageButtons) {
+        button.setAttribute("aria-pressed", String(button.dataset.language === language));
+      }
+      document.querySelector(".brand").setAttribute("aria-label", showJapanese ? "シゴデキ シール帳" : "ProKiddo Sticker Book");
+      document.querySelector(".skip-link").href = showJapanese ? "#policy" : "#en-data";
+      document.querySelector(".skip-link").textContent = showJapanese ? "本文へ移動" : "Skip to content";
+    }
+    for (const button of languageButtons) {
+      button.addEventListener("click", () => setLanguage(button.dataset.language));
+    }
+  </script>
+</body>
+</html>
